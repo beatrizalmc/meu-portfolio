@@ -1,0 +1,776 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: #000000;
+}
+
+header {
+    padding: 20px 90px;
+}
+
+header .logo {
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 3%;
+    color: #D76483;
+}
+
+header nav ul li,
+header nav ul li a,
+.infos-pagina nav ul li,
+.infos-pagina nav ul li a {
+    list-style: none;
+    text-decoration: none;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 3%;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.dropdown-languages,
+.dropdown-temas {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu-languages,
+.dropdown-menu-temas {
+    position: absolute;
+    display: none;
+    margin-top: 4px;
+}
+
+.dropdown-menu-languages.active,
+.dropdown-menu-temas.active {
+    display: block;
+}
+
+.btn-languages button,
+.btn-temas button {
+    background-color: #D76483;
+    color: #FFFFFF;
+    border: none;
+}
+
+.btn-languages button {
+    padding: 10px 13px;
+    border-radius: 100%;
+}
+
+.btn-temas button {
+    padding: 10px 10px;
+    border-radius: 100%;
+}
+
+header nav ul li a:hover,
+.infos-pagina nav ul li a:hover {
+    border-bottom: 2px solid #D76483;
+}
+
+.btn-languages button:hover,
+.btn-temas button:hover {
+    box-shadow: 1px 1px 19px 1px rgba(0,0,0,0.4);
+    transform: translateY(-2px);
+}
+
+header .menu-mobile-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* <!--Sobre mim: Introdução--> */
+.sobre-mim {
+    padding: 140px 40px;
+}
+
+.sobre-mim .apresentacao .cumprimento,
+.sobre-mim .apresentacao .meu-nome {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 3%;
+    margin-bottom: 0;
+}
+
+.sobre-mim .apresentacao .meu-nome {
+    color: #D76483;
+}
+
+.sobre-mim .apresentacao h1 {
+    font-size: 90px;
+    font-weight: bold;
+    letter-spacing: 3%;
+    line-height: 120%;
+}
+
+.sobre-mim .apresentacao .minha-descricao {
+    padding: 34px 140px 30px 0;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 3%;
+}
+
+.sobre-mim .descricao .btn-download-cv {
+    background-color: #D76483;
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 3%;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+}
+
+.sobre-mim .descricao a:hover,
+.contato .redes-contato a:hover {
+    transform: translateY(-3px);
+}
+
+/* <!--Experiências Profissionais--> */
+.experiencias {
+    padding: 40px 40px 0 40px;
+}
+
+.experiencias h2 {
+    padding-bottom: 20px;
+}
+
+.experiencias h2,
+.habilidades h2,
+.projetos h2,
+.contato h2 {
+    font-size: 65px;
+    font-weight: 600;
+    letter-spacing: 3%;
+    text-align: center;
+}
+
+.experiencias .experiencia {
+    border: 1px solid #D76483;
+    border-radius: 12px;
+    background-color: #FFC2BB;
+    padding: 26px 60px;
+    margin: 10px 18px;
+}
+
+.experiencias .ano-experiencia span {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 3%;
+}
+
+.experiencias .experiencia h3 {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 3%;
+}
+
+.experiencias .experiencia h4 {
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 3%;
+}
+
+.experiencias .experiencia p {
+    font-size: 21px;
+    font-weight: 400;
+    letter-spacing: 3%;
+    padding: 10px 0;
+}
+
+.experiencias .aprendizados span {
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 3%;
+    border-radius: 12px;
+    background-color: #D76483;
+    padding: 10px 20px;
+}
+
+.experiencias .todas-experiencias {
+    position: relative;
+}
+
+.experiencias .todas-experiencias::before {
+    content: "";
+    background: url("../images/linha-experiencias.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 12px;
+    height: 1350px;
+    position: absolute;
+    left: 13px;
+    top: 100px;
+}
+
+/* <!--Habilidades--> */
+.habilidades, .projetos, .contato {
+    padding: 0 40px;
+}
+
+.habilidades h2, .projetos h2, .contato h2 {
+    padding: 80px 0 10px 0;
+}
+
+.habilidades .area-habilidade {
+    border: 3px solid #FFC2BB;
+    border-radius: 12px;
+    padding: 24px 38px 40px 38px;
+    min-height: 270px;
+}
+
+.habilidades .area-habilidade h3 {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 3%;
+    padding-bottom: 16px;
+}
+
+.habilidades .area-habilidade span {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 3%;
+    background-color: #FFC2BB;
+    border: 3px solid #EF9CA4;
+    border-radius: 12px;
+    padding: 12px 18px;
+}
+
+/* <!--Projetos--> */
+.projetos .filtros button {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 3%;
+    color: #000000;
+    border: 0.4px solid #545454;
+    border-radius: 12px;
+    padding: 10px 20px;
+}
+
+.projetos .swiper .swiper-slide {
+    width: calc(33.33% - 30px);
+    height: 512px;
+    margin-top: 50px;
+    background-color: #FFC2BB;
+    border: 1px solid #D76483;
+    border-radius: 12px;
+    padding: 30px 30px 30px 40px;
+}
+
+.projetos .swiper .swiper-slide img {
+    width: 320px;
+    height: 380px;
+}
+
+.projetos .swiper .swiper-slide a {
+    text-decoration: none;
+    letter-spacing: 3%;
+    color: #000;
+}
+
+.projetos .swiper .swiper-slide a .projeto-area {
+    font-size: 16px;
+    font-weight: 500;
+    color: #D76483;
+}
+
+.projetos .swiper .swiper-slide a .projeto-nome {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.projetos .setas {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.projetos .setas .swiper-next-proj,
+.projetos .setas .swiper-prev-proj {
+    position: static;
+    color: #000000;
+    width: 30px;
+    height: 30px;
+}
+
+.projetos .obs-projetos span {
+    color: #545454;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 3%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.filtros button.active {
+    background-color: #D76483;
+    color: #FFFFFF;
+    border: 1px solid #EF9CA4;
+    box-shadow: 1px 1px 19px 1px rgba(0,0,0,0.4);
+}
+
+/* <!--Contato--> */
+.contato form button {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 3%;
+    background-color: #D76483;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 20px;
+}
+
+.contato form input {
+    border: 1px solid #545454;
+    border-radius: 12px;
+    padding: 10px 20px;
+    width: 50%;
+    height: 55px;
+}
+
+.contato .infos-pagina {
+    padding-top: 100px;
+    padding-bottom: 48px;
+}
+
+.contato .infos-pagina .logo {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 3%;
+    color: #D76483;
+}
+
+.contato form button:hover {
+    box-shadow: 1px 1px 19px 1px rgba(0,0,0,0.4);
+}
+
+/* <!--Footer--> */
+footer {
+    background-color: #EF9CA4;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 3%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer .nome {
+    color: #D76483;
+    font-weight: bold;
+}
+
+/* Modo Dark */
+body.dark {
+    background-color: #121212;
+    color: #FFFFFF;
+}
+
+body.dark header a,
+body.dark .contato a {
+    color: #FFFFFF;
+}
+
+body.dark .sobre-mim .descricao a,
+body.dark .contato .redes-contato a {
+    background-color: #FFFFFF;
+    padding: 8px;
+    border-radius: 12px;
+}
+
+body.dark .experiencia h3,
+body.dark .experiencia h4,
+body.dark .experiencia p{
+    color: #000000;
+}
+
+/*Botão Scroll Top*/
+.btn-scroll-top {
+  position: fixed;
+  bottom: 90px;
+  right: 35px;
+  width: 50px;
+  max-width: 100%;
+  height: 50px;
+  font-size: 18px;
+  background: #D76483;
+  border: 0;
+  border-radius: 100%;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-scroll-top.show {
+  opacity: 1;
+}
+
+.btn-scroll-top:hover {
+    box-shadow: 1px 1px 19px 1px rgba(0,0,0,0.4);
+}
+
+/* Responsividade */
+@media (min-width: 1400px) {
+    .sobre-mim, .experiencias, .habilidades, .projetos, .contato {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 1200px) {
+    header {
+        padding: 20px 50px;
+    }
+    .sobre-mim {
+        padding: 80px 40px;
+    }
+
+    .sobre-mim .img-foto-principal {
+        margin-top: 180px;
+    }
+
+    .sobre-mim .img-foto-principal img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .sobre-mim .apresentacao .minha-descricao {
+        padding: 34px 30px 30px 0;
+    }
+
+    .experiencias .todas-experiencias::before {
+        height: 1600px;
+        top: 180px;
+    }
+
+    .experiencias h2 {
+        padding: 0 200px 20px 200px;
+    }
+
+    .experiencias .aprendizados span {
+        text-align: center;
+    }
+
+    .habilidades .area-habilidade {
+        min-height: 340px;
+    }
+
+    .projetos .swiper .swiper-slide {
+        width: calc(50% - 30px);
+    }
+}
+
+@media (max-width: 992px) {
+    header {
+        position: relative;
+    }
+
+    .menu-mobile-btn {
+        display: block;
+    }
+
+    .menu-mobile {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        padding-left: 20px;
+    }
+
+    .menu-mobile.active {
+        display: block;
+    }
+
+    .botoes-mobile {
+        padding-left: 30px;
+    }
+
+    .sobre-mim {
+        padding: 10px 40px 80px 40px;
+    }
+
+    .sobre-mim .escrita {
+        order: 2;
+        margin-top: 40px;
+    }
+
+    .sobre-mim .img-foto-principal {
+        margin-top: 0;
+        text-align: right;
+    }
+
+    .sobre-mim .apresentacao h1 {
+        font-size: 72px;
+    }
+
+    .experiencias h2 {
+        padding: 0 0 20px 0;
+    }
+
+    .experiencias .aprendizados {
+        flex-wrap: wrap;
+    }
+
+    .experiencias .todas-experiencias::before {
+        display: none;
+    }
+
+    .experiencias .accordion-experiencia {
+        border: 1px solid #D76483;
+        border-radius: 12px;
+        background-color: #FFC2BB;
+        margin: 10px 18px;
+        overflow: hidden;
+    }
+
+    .experiencias .btn-experiencias {
+        border: none;
+        border-radius: 0;
+        background-color: transparent;
+        padding: 26px 60px 20px 60px;
+        margin: 0;
+    }
+
+    .experiencias .btn-experiencias:focus {
+        box-shadow: none;
+    }
+
+    .experiencias .collapse .experiencia,
+    .experiencias .collapsing .experiencia {
+        border: none;
+        border-radius: 0;
+        background-color: transparent;
+        margin: 0;
+        padding: 0 60px 26px 60px;
+    }
+
+    .btn-experiencias h3 {
+        font-size: 32px;
+        font-weight: 600;
+        letter-spacing: 3%;
+    }
+
+    .habilidades .area-habilidade {
+        min-height: 190px;
+    }
+
+    .habilidades .segunda-coluna {
+        margin-top: 24px;
+    }
+
+    .projetos .swiper .swiper-slide {
+        width: calc(65% - 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px 40px;
+    }
+
+    .sobre-mim .img-foto-principal {
+        text-align: center;
+    }
+
+    .sobre-mim .apresentacao h1 {
+        font-size: 52px;
+    }
+
+    .experiencias .btn-experiencias {
+        padding: 26px 40px 20px 40px;
+        color: #000000;
+    }
+
+    .projetos .swiper .swiper-slide {
+        width: calc(80% - 30px);
+    }
+
+    .infos-pagina nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        padding: 16px 14px;
+    }
+
+    header .logo {
+        font-size: 22px;
+    }
+
+    header nav ul li, header nav ul li a {
+        font-size: 18px;
+    }
+
+    .menu-mobile {
+        background-color: #FFFFFF;
+        text-align: center;
+        padding: 0;
+    }
+
+    .menu-mobile ul {
+        padding: 0;
+    }
+
+    .menu-mobile .botoes-mobile {
+        justify-content: center;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    .sobre-mim {
+        padding: 0 4px 70px 4px;
+    }
+
+    .sobre-mim .apresentacao h1,
+    .experiencias h2,
+    .habilidades h2, .projetos h2, .contato h2 {
+        font-size: 32px;
+    }
+
+    .sobre-mim .apresentacao .minha-descricao {
+        padding: 20px 20px 20px 0;
+    }
+
+    .sobre-mim .apresentacao .minha-descricao {
+        font-size: 16px;
+    }
+
+    .sobre-mim .descricao {
+        justify-content: center;
+    }
+
+    .experiencias {
+        padding: 40px 0 0 16px;
+    }
+
+    .experiencias .ano-experiencia span,
+    .experiencias .experiencia h4,
+    .experiencias .experiencia p {
+        font-size: 16px;
+    }
+
+    .btn-experiencias h3,
+    .contato .infos-pagina .logo {
+        font-size: 18px;
+    }
+
+    .experiencias .btn-experiencias {
+        padding: 12px 20px 12px 20px;
+    }
+
+    .experiencias .collapse .experiencia, .experiencias .collapsing .experiencia {
+        padding: 0 20px 26px 20px;
+    }
+
+    .experiencias .aprendizados span {
+        font-size: 12px;
+        padding: 10px 16px;
+    }
+
+    .habilidades, .projetos, .contato {
+        padding: 0 4px;
+    }
+
+    .habilidades .area-habilidade h3 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .habilidades .area-habilidade span {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .habilidades .area-habilidade {
+        padding: 20px 10px 30px 10px;
+        min-height: 100px;
+        text-align: center;
+    }
+
+    .projetos .filtros {
+        flex-wrap: wrap;
+    }
+
+    .projetos .swiper .swiper-slide {
+        width: calc(100% - 30px);
+        height: 412px;
+        margin-top: 30px;
+        padding: 30px 20px 30px 20px;
+    }
+
+    .projetos .filtros button {
+        font-size: 16px;
+        padding: 8px 18px;
+    }
+
+    .habilidades .area-habilidade div {
+        align-items: center;
+        justify-content: center;
+        gap: 10px !important;
+    }
+
+    .contato .email-contato form {
+        flex-direction: column !important;
+    }
+
+    .contato form input {
+        width: 70%;
+    }
+
+    .contato form button {
+        font-size: 16px;
+        padding: 8px 18px;
+    }
+
+    .infos-pagina nav ul {
+        gap: 12px !important;
+    }
+
+    .infos-pagina nav ul li, .infos-pagina nav ul li a {
+        font-size: 16px;
+    }
+
+    .projetos .swiper .swiper-slide a .projeto-area {
+        font-size: 14px;
+    }
+
+    .projetos .swiper .swiper-slide a .projeto-nome {
+        font-size: 18px;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 10px 0;
+    }
+}
+
+/* Breakpoints:
+<576px - OK - habilidades accordion
+>=576px - sm OK - habilidades accordion
+>=768px - md OK
+>=992px - lg OK
+>=1200px - xl OK
+>=1400px - xxl OK
+*/
