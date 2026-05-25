@@ -668,6 +668,11 @@ body.dark .experiencia p{
         justify-content: center;
     }
 
+    .sobre-mim .img-foto-principal img {
+        width: 230px;
+        height: auto;
+    }
+
     .experiencias {
         padding: 40px 0 0 16px;
     }
