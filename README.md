@@ -1,6 +1,7 @@
 # Bia </> — Portfólio Pessoal
 
-Portfólio pessoal desenvolvido com HTML, CSS e JavaScript, apresentando minha trajetória profissional, habilidades técnicas e principais projetos.
+Portfólio pessoal desenvolvido com HTML, CSS e JavaScript. 
+O objetivo foi criar uma interface moderna, responsiva e organizada, colocando em prática conhecimentos de desenvolvimento front-end adquiridos durante meus estudos e cursos.
 
 ## 🔗 Acesse
 
@@ -8,7 +9,22 @@ Portfólio pessoal desenvolvido com HTML, CSS e JavaScript, apresentando minha t
 
 ---
 
-## 📋 Seções
+## Protótipo no Figma
+
+Antes do desenvolvimento, todo o layout foi planejado e prototipado no Figma, incluindo:
+
+- estrutura visual;
+- paleta de cores;
+- organização das seções;
+- responsividade;
+- identidade visual do projeto.
+
+O protótipo serviu como referência principal durante a implementação do site.
+
+
+---
+
+## Seções
 
 - **Sobre mim** — apresentação pessoal com links para LinkedIn, GitHub e e-mail
 - **Experiências Profissionais** — linha do tempo com as experiências anteriores
@@ -18,9 +34,10 @@ Portfólio pessoal desenvolvido com HTML, CSS e JavaScript, apresentando minha t
 
 ---
 
-## ✨ Funcionalidades
+## Funcionalidades
 
 - **Modo claro/escuro** — alternância de tema via botão no header
+- **Mudar PT para EN** - em deesenvolvimento
 - **Menu responsivo** — navbar colapsável em dispositivos móveis
 - **Accordion de experiências** — exibição em accordion contínuo no mobile, com linha vertical animada que acompanha a abertura dos itens
 - **Carrossel de projetos** com navegação por setas (Swiper.js)
@@ -30,11 +47,13 @@ Portfólio pessoal desenvolvido com HTML, CSS e JavaScript, apresentando minha t
 
 ---
 
-## 🛠️ Tecnologias
+## Tecnologias
 
 - HTML5
 - CSS3 (Flexbox, Grid, CSS Custom Properties, media queries)
 - JavaScript (ES6+)
+- Git e GitHub
+- Figma
 - [Bootstrap 5.3](https://getbootstrap.com/)
 - [Swiper.js 12](https://swiperjs.com/)
 - [Bootstrap Icons](https://icons.getbootstrap.com/)
@@ -73,17 +92,8 @@ portfolio/
 
 ---
 
-## 📱 Responsividade
-
-| Breakpoint | Comportamento |
-|---|---|
-| `< 768px` | Menu mobile, accordion nas experiências, linha vertical oculta |
-| `768px` | Ajustes de padding e foto centralizada |
-| `992px` | Menu desktop visível, experiências em linha do tempo |
-| `1200px` | Imagem principal adaptada, carrossel com 2 slides |
-| `≥ 1400px` | Container centralizado com padding reduzido |
-
----
+## Preview
+![alt text](image.png)
 
 ## 🚀 Como rodar localmente
 
