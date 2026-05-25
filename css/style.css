@@ -1,3 +1,12 @@
+:root {
+    --rosa-principal: hsl(343, 58%, 62%); /*#D76483*/
+    --rosa-medio: hsl(353, 71%, 77%); /*#DF6483*/
+    --rosa-claro: hsl(9, 100%, 87%);  /*#FFC2BB EF9CA4*/
+
+    --preto: #000000;
+    --branco: #FFFFFF;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +16,14 @@
 
 html {
     color-scheme: only light;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
     color: #000000;
-    background-color: #ffffff;
+    background-color: #FFFFFF !important;
 }
 
 body {

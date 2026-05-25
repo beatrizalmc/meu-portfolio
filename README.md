@@ -4,7 +4,6 @@ Portfólio pessoal desenvolvido com HTML, CSS e JavaScript, apresentando minha t
 
 ## 🔗 Acesse
 
-> Deploy em breve — repositório disponível no [GitHub](https://github.com/beatrizalmc)
 [Página do Portfólio](https://beatrizalmc.github.io/meu-portfolio/)
 
 ---
@@ -40,7 +39,7 @@ Portfólio pessoal desenvolvido com HTML, CSS e JavaScript, apresentando minha t
 - [Swiper.js 12](https://swiperjs.com/)
 - [Bootstrap Icons](https://icons.getbootstrap.com/)
 - [Google Fonts — Poppins](https://fonts.google.com/specimen/Poppins)
-- [Google Icons](https://icons.google.com)
+- [Google Icons](https://icons.fonts.google.com)
 
 ---
 
