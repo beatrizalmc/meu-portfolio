@@ -1,12 +1,3 @@
-:root {
-    --rosa-principal: hsl(343, 58%, 62%); /*#D76483*/
-    --rosa-medio: hsl(353, 71%, 77%); /*#DF6483*/
-    --rosa-claro: hsl(9, 100%, 87%);  /*#F6D0DC EF9CA4*/
-
-    --preto: #000000;
-    --branco: #FFFFFF;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -175,7 +166,7 @@ header .menu-mobile-btn {
 .experiencias .experiencia {
     border: 1px solid #D76483;
     border-radius: 12px;
-    background-color: #F6D0DC;
+    background-color: #FFD6E0;
     padding: 26px 60px;
     margin: 10px 18px;
 }
@@ -241,7 +232,7 @@ header .menu-mobile-btn {
 }
 
 .habilidades .area-habilidade {
-    border: 3px solid #F6D0DC;
+    border: 3px solid #FFD6E0;
     border-radius: 12px;
     padding: 24px 38px 40px 38px;
     min-height: 270px;
@@ -259,7 +250,7 @@ header .menu-mobile-btn {
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 3%;
-    background-color: #F6D0DC;
+    background-color: #FFD6E0;
     border: 3px solid #EF9CA4;
     border-radius: 12px;
     padding: 12px 18px;
@@ -280,7 +271,7 @@ header .menu-mobile-btn {
     width: calc(33.33% - 30px);
     height: auto;
     margin-top: 50px;
-    background-color: #F6D0DC;
+    background-color: #FFD6E0;
     border: 1px solid #D76483;
     border-radius: 12px;
     padding: 30px 30px 30px 40px;
@@ -555,7 +546,7 @@ body.dark .experiencia p{
     .experiencias .accordion-experiencia {
         border: 1px solid #D76483;
         border-radius: 12px;
-        background-color: #F6D0DC;
+        background-color: #FFD6E0;
         margin: 10px 18px;
         overflow: hidden;
     }
