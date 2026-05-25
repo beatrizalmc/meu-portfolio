@@ -6,7 +6,6 @@
 }
 
 html {
-    color-scheme: only light;
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -14,11 +13,7 @@ html {
 
 body {
     color: #000000;
-    background-color: #FFFFFF !important;
-}
-
-body {
-    color: #000000;
+    background-color: #FFFFFF;
 }
 
 header {
