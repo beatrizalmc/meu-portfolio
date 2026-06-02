@@ -15,20 +15,20 @@ dropdownsLanguages.forEach(dropdown => {
 });
 
 // Troca de idioma
-const btnEN = document.querySelector(".btn-en");
-const btnPT = document.querySelector(".btn-pt");
+const btnEnglish = document.querySelectorAll(".btn-en");
+const btnPortuguese = document.querySelectorAll(".btn-pt");
 
-if (btnEN) {
-    btnEN.addEventListener("click", () => {
-        window.location.href = `${window.location.origin}/portfolio/en/`;
+btnEnglish.forEach(btn => {
+    btn.addEventListener("click", () => {
+        window.location.href = `${window.location.origin}/meu-portfolio/en/`;
     });
-}
+});
 
-if (btnPT) {
-    btnPT.addEventListener("click", () => {
-        window.location.href = `${window.location.origin}/portfolio/`;
+btnPortuguese.forEach(btn => {
+    btn.addEventListener("click", () => {
+        window.location.href = `${window.location.origin}/meu-portfolio/`;
     });
-}
+});
 
 // Trocar tema claro/escuro
 const dropdownsTemas = document.querySelectorAll(".dropdown-temas");
