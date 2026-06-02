@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="color-scheme" content="only light">
+
+    <title>Portfolio - Beatriz Almeida</title>
+
+    <link rel="icon" type="image/png" href="../images/icons/favicon.png">
+
+    <!--Fonte-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!--Swiper-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="d-flex flex-row align-items-center justify-content-between">
+            <div class="d-none d-lg-block">
+                <span class="logo">Bia &lt;/&gt;</span>
+            </div>
+            <div class="d-none d-lg-block">
+                <nav>
+                    <ul class="d-flex flex-row gap-4 m-0">
+                        <li><a href="#sobre-mim">About me</a></li>
+                        <li><a href="#experiencias">Experiences</a></li>
+                        <li><a href="#habilidades">Skills</a></li>
+                        <li><a href="#projetos">Projects</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="d-flex flex-row gap-3 d-none d-lg-block">
+                <div class="btn-languages dropdown-languages">
+                    <button class="dropdown-languages-btn btn-pt">
+                        PT
+                    </button>
+                    <div class="dropdown-menu-languages">
+                        <button class="btn-en">EN</button>
+                    </div>
+                </div>
+                <div class="btn-temas dropdown-temas">
+                    <button class="dropdown-temas-btn">
+                        <img src="../images/icons/modos-tema.svg" alt="">
+                    </button>
+                    <div class="dropdown-menu-temas">
+                        <button class="btn-tema-claro">
+                            <img src="../images/icons/tema-claro.svg" alt="Light Mode">
+                        </button>
+                        <button class="btn-tema-escuro mt-1">
+                            <img src="../images/icons/tema-escuro.svg" alt="Dark Mode">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-lg-none">
+            <div class="d-flex flex-row align-items-center justify-content-between">
+                <div>
+                    <button class="menu-mobile-btn">
+                        <img src="../images/icons/menu.svg" alt="Menu">
+                    </button>
+                    <div class="menu-mobile">
+                        <nav>
+                            <ul>
+                                <li><a href="#sobre-mim">About me</a></li>
+                                <li><a href="#experiencias">Experiences</a></li>
+                                <li><a href="#habilidades">Skills</a></li>
+                                <li><a href="#projetos">Projects</a></li>
+                            </ul>
+                        </nav>
+                        <div class="botoes-mobile d-flex flex-row gap-3">
+                            <div class="btn-languages dropdown-languages">
+                                <button class="dropdown-languages-btn btn-pt">
+                                    PT
+                                </button>
+                                <div class="dropdown-menu-languages">
+                                    <button class="btn-en">EN</button>
+                                </div>
+                            </div>
+                            <div class="btn-temas dropdown-temas">
+                                <button class="dropdown-temas-btn">
+                                    <img src="../images/icons/modos-tema.svg" alt="">
+                                </button>
+                                <div class="dropdown-menu-temas">
+                                    <button class="btn-tema-claro">
+                                        <img src="../images/icons/tema-claro.svg" alt="Light mode">
+                                    </button>
+                                    <button class="btn-tema-escuro mt-1">
+                                        <img src="../images/icons/tema-escuro.svg" alt="Dark mode">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span class="logo">Bia &lt;/&gt;</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!--Sobre mim: Introdução-->
+        <section class="sobre-mim" id="sobre-mim">
+            <div class="container-fluid container-xxl">
+                <div class="row">
+                    <div class="col-12 col-lg-8 escrita">
+                        <div class="apresentacao">
+                            <p class="cumprimento">Hello! I am</p> 
+                            <p class="meu-nome">Beatriz Almeida,</p>
+                            <h1>Front-end <span class="atribuicao">Developer.</span></h1>
+                            <p class="minha-descricao">
+                                Student of Systems Analysis and Development at 
+                                UNOESTE (2nd semester), also graduated in Biomedicine from UNOESTE.
+                                Constantly developing and learning.
+                            </p>
+                        </div>
+                        <div class="descricao d-flex flex-row gap-3 align-items-center">
+                            <a href="https://www.linkedin.com/in/beatrizalmc" target="_blank">
+                                <img src="../images/icons/linkedin.svg" alt="LinkedIn">
+                            </a>
+                            <a href="https://github.com/beatrizalmc" target="_blank">
+                                <img src="../images/icons/github.svg" alt="GitHub">
+                            </a>
+                            <a href="mailto:beatriz.almeida@hotmail.com">
+                                <img src="../images/icons/email.svg" alt="Email">
+                            </a>
+                            <!-- <button type="button" class="btn-download-cv">Download CV</button> -->
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 img-foto-principal">
+                        <img src="../images/foto-principal.png" alt="Boneco Beatriz">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Experiências Profissionais-->
+        <section class="experiencias" id="experiencias">
+            <div class="container-fluid container-xxl">
+                <div class="row todas-experiencias d-flex flex-column gap-3">
+                    <h2>Professional Experiences</h2>
+                    <div class="col-12">
+                        <div class="d-none d-lg-block">
+                            <div class="ano-experiencia d-flex flex-row gap-2">
+                                <img src="../images/icons/bolinha.svg" alt="">
+                                <span>2026</span>
+                            </div>
+                            <div class="experiencia">
+                                <h3>Internship in Development</h3>
+                                <h4>OxigenWeb - 3 months</h4>
+                                <p>
+                                    I worked on developing training websites, using as a reference
+                                    existing projects built in Figma that have already been deployed to production. My experience
+                                    in front-end and back-end development, using HTML, CSS, JavaScript, Bootstrap, Swiper, and PHP.
+                                    I also provided support in technical support and customer service activities.
+                                </p>
+                                <div class="aprendizados d-flex flex-row gap-3">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScript</span>
+                                    <span>PHP</span>
+                                    <span>Technical Support</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Mobile Accordion -->
+                        <div class="d-lg-none">
+                            <div class="ano-experiencia d-flex flex-row gap-2">
+                                <img src="../images/icons/bolinha.svg" alt="">
+                                <span>2026</span>
+                            </div>
+                            <div class="accordion-experiencia">
+                                <button class="btn btn-experiencias w-100 experiencia-mobile-btn" type="button" data-bs-toggle="collapse" data-bs-target="#exp1">
+                                    <div class="d-flex justify-content-between align-items-center w-100">
+                                        <div class="d-flex flex-column text-start">
+                                            <h3>Internship in Development</h3>
+                                        </div>
+                                        <span>
+                                            <img src="../images/icons/seta-accordion.svg" alt="">
+                                        </span>
+                                    </div>
+                                </button>
+                                <div class="collapse" id="exp1">
+                                    <div class="experiencia">
+                                        <h4>OxigenWeb - 3 months</h4>
+                                        <p>
+                                            I worked on developing training websites, using as a reference
+                                            existing projects built in Figma that have already been deployed to production. My experience
+                                            in front-end and back-end development, using HTML, CSS, JavaScript, Bootstrap, Swiper, and PHP.
+                                            I also provided support in technical support and customer service activities.
+                                        </p>
+                                        <div class="aprendizados d-flex flex-wrap gap-3">
+                                            <span>HTML</span>
+                                            <span>CSS</span>
+                                            <span>JavaScript</span>
+                                            <span>PHP</span>
+                                            <span>Technical Support</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="d-none d-lg-block">
+                            <div class="ano-experiencia d-flex flex-row gap-2">
+                                <img src="../images/icons/bolinha.svg" alt="">
+                                <span>2024-2025</span>
+                            </div>
+                            <div class="experiencia">
+                                <h3>Customer Service Analyst</h3>
+                                <h4>SABESP - 1 year and 1 month</h4>
+                                <p>
+                                    I worked on analyzing and solving problems related to measurements and billing, 
+                                    developing logical reasoning, data analysis, and attention to details. I supported 
+                                    administrative processes with a focus on organization and information management. I provided 
+                                    customer service to internal and external clients, improving communication and empathy skills. I worked in a team in a dynamic environment, enhancing collaboration 
+                                    and priority management. 
+                                </p>
+                                <div class="aprendizados d-flex flex-row gap-3">
+                                    <span>Customer Service</span>
+                                    <span>Excel</span>
+                                    <span>Data Analysis</span>
+                                    <span>Teamwork</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Mobile Accordion -->
+                        <div class="d-lg-none">
+                            <div class="ano-experiencia d-flex flex-row gap-2">
+                                <img src="../images/icons/bolinha.svg" alt="">
+                                <span>2024-2025</span>
+                            </div>
+                            <div class="accordion-experiencia">
+                                <button class="btn btn-experiencias w-100 experiencia-mobile-btn" type="button" data-bs-toggle="collapse" data-bs-target="#exp2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-column text-start">
+                                            <h3>Customer Service Analyst</h3>
+                                        </div>
+                                        <span>
+                                            <img src="../images/icons/seta-accordion.svg" alt="">
+                                        </span>
+                                    </div>
+                                </button>
+                                <div class="collapse" id="exp2">
+                                    <div class="experiencia">
+                                        <h4>SABESP - 1 year and 1 month</h4>
+                                        <p>
+                                            I worked on analyzing and solving problems related to measurements and billing, 
+                                            developing logical reasoning, data analysis, and attention to details. I supported 
+                                            administrative processes with a focus on organization and information management. I provided 
+                                            customer service to internal and external clients, improving communication and empathy skills. I worked in a team in a dynamic environment, enhancing collaboration 
+                                            and priority management. 
+                                        </p>
+                                        <div class="aprendizados d-flex flex-row gap-3">
+                                            <span>Customer Service</span>
+                                            <span>Excel</span>
+                                            <span>Data Analysis</span>
+                                            <span>Teamwork</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="d-none d-lg-block">
+                            <div class="ano-experiencia d-flex flex-row gap-2">
+                                <img src="../images/icons/bolinha.svg" alt="">
+                                <span>2019-2020</span>
+                            </div>
+                            <div class="experiencia">
+                                <h3>Administrative Intern</h3>
+                                <h4>Court of Justice of the State of São Paulo - 1 year</h4>
+                                <p>
+                                    I was responsible for organizing and filing physical and digital cases, 
+                                    developing attention to detail and responsibility in document control. I worked on receiving and sending parcels, ensuring the 
+                                    integrity and traceability of the information. I provided service to the public and internal support, strengthening communication skills and 
+                                    empathy in user interactions. I collaborated with the team on administrative tasks, improving organization, responsibility and deadline adherence.
+                                </p>
+                                <div class="aprendizados d-flex flex-row gap-3">
+                                    <span>Customer Service</span>
+                                    <span>Excel</span>
+                                    <span>Teamwork</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Mobile Accordion -->
+                        <div class="d-lg-none">
+                            <div class="ano-experiencia d-flex flex-row gap-2">
+                                <img src="../images/icons/bolinha.svg" alt="">
+                                <span>2019-2020</span>
+                            </div>
+                            <div class="accordion-experiencia">
+                                <button class="btn btn-experiencias w-100 experiencia-mobile-btn" type="button" data-bs-toggle="collapse" data-bs-target="#exp3">
+                                    <div class="d-flex justify-content-between align-items-center w-100">
+                                        <div class="d-flex flex-column text-start">
+                                            <h3>Administrative Intern</h3>
+                                        </div>
+                                        <span>
+                                            <img src="../images/icons/seta-accordion.svg" alt="">
+                                        </span>
+                                    </div>
+                                </button>
+                                <div class="collapse" id="exp3">
+                                    <div class="experiencia">
+                                        <h4>Court of Justice of the State of São Paulo - 1 year</h4>
+                                        <p>
+                                            I was responsible for organizing and filing physical and digital cases, 
+                                            developing attention to detail and responsibility in document control. I worked on receiving and sending parcels, ensuring the 
+                                            integrity and traceability of the information. I provided service to the public and internal support, strengthening communication skills and 
+                                            empathy in user interactions. I collaborated with the team on administrative tasks, improving organization, responsibility and deadline adherence.
+                                        </p>
+                                        <div class="aprendizados d-flex flex-row gap-3">
+                                            <span>Customer Service</span>
+                                            <span>Excel</span>
+                                            <span>Teamwork</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Habilidades-->
+        <section class="habilidades" id="habilidades">
+            <div class="container-fluid container-xxl">
+                <div class="row">
+                    <h2>Skills</h2>
+                    <div class="primeira-coluna col-12 col-lg-6 d-flex flex-column gap-4">
+                        <div class="area-habilidade">
+                            <h3>Front-end</h3>
+                            <div class="d-flex gap-3 flex-wrap">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Bootstrap</span>
+                                <span>React</span>
+                                <span>TypeScript</span>
+                                <span>SASS</span>
+                            </div>
+                        </div>
+                        <div class="area-habilidade">
+                            <h3>Data</h3>
+                            <div class="d-flex gap-3 flex-wrap">
+                                <span>SQL</span>
+                                <span>MySQL</span>
+                                <span>SQL Server</span>
+                                <span>Power BI</span>
+                                <span>Excel</span>
+                            </div>
+                        </div>
+                        <div class="area-habilidade">
+                            <h3>Cyber, Infra & Methodologies</h3>
+                            <div class="d-flex gap-3 flex-wrap">
+                                <span>Agile</span>
+                                <span>Kanban</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="segunda-coluna col-12 col-lg-6 d-flex flex-column gap-4">
+                        <div class="area-habilidade">
+                            <h3>Back-end</h3>
+                            <div class="d-flex gap-3 flex-wrap">
+                                <span>PHP</span>
+                                <span>Python</span>
+                                <span>Node.js</span>
+                            </div>
+                        </div>
+                        <div class="area-habilidade">
+                            <h3>Tools</h3>
+                            <div class="d-flex gap-3 flex-wrap">
+                                <span>VS Code</span>
+                                <span>Figma</span>
+                                <span>Git/GitHub</span>
+                                <span>Jira</span>
+                            </div>
+                        </div>
+                        <div class="area-habilidade">
+                            <h3>Soft Skills</h3>
+                            <div class="d-flex gap-3 flex-wrap">
+                                <span>Responsibility</span>
+                                <span>Organization</span>
+                                <span>Communication</span>
+                                <span>Customer Service</span>
+                                <span>English</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Projetos-->
+        <section class="projetos" id="projetos">
+            <div class="container-fluid container-xxl">
+                <div class="row">
+                    <h2>Projects</h2>
+                    <div class="filtros d-flex flex-row gap-3 align-items-center justify-content-center">
+                        <button type="button" data-filtro="todos" class="active">All</button>
+                        <button type="button" data-filtro="web">Web</button>
+                        <button type="button" data-filtro="back-end">Back-end</button>
+                        <button type="button" data-filtro="dados">Data</button>
+                    </div>
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <!-- <div class="swiper-slide d-flex flex-column gap-1">
+                                <img src="../images/proj-rascunho.png" alt="">
+                                <a href="#" class="pt-2">
+                                    <span class="projeto-area">Desenvolvimento Web</span>
+                                </a>
+                                <a href="#">
+                                    <span class="projeto-nome">Landing Page de Casamento - Em Andamento</span>
+                                </a>
+                            </div> -->
+                            <div class="swiper-slide d-flex flex-column gap-1" data-categoria="web">
+                                <img src="../images/proj-mario.png" alt="Projeto Mario Jump Game" class="img-fluid">
+                                <a href="https://github.com/beatrizalmc/mario-jump-game" class="pt-2">
+                                    <span class="projeto-area">Web Development</span>
+                                </a>
+                                <a href="https://github.com/beatrizalmc/mario-jump-game">
+                                    <span class="projeto-nome">Mario Jump Game</span>
+                                </a>
+                            </div>
+                            <div class="swiper-slide d-flex flex-column gap-1" data-categoria="web">
+                                <img src="../images/proj-css-generator.png" alt="" class="img-fluid">
+                                <a href="https://github.com/beatrizalmc/css-generator" class="pt-2">
+                                    <span class="projeto-area">Web Development</span>
+                                </a>
+                                <a href="https://github.com/beatrizalmc/css-generator">
+                                    <span class="projeto-nome">CSS Generator with IA</span>
+                                </a>
+                            </div>
+                            <div class="swiper-slide d-flex flex-column gap-1" data-categoria="web">
+                                <img src="../images/proj-flappybird.png" alt="Projeto Flappy Bird" class="img-fluid">
+                                <a href="https://github.com/beatrizalmc/projeto-flappy-bird" class="pt-2">
+                                    <span class="projeto-area">Web Development</span>
+                                </a>
+                                <a href="https://github.com/beatrizalmc/projeto-flappy-bird">
+                                    <span class="projeto-nome">Flappy Bird</span>
+                                </a>
+                            </div>
+                            <div class="swiper-slide d-flex flex-column gap-1" data-categoria="web">
+                                <img src="../images/proj-calculadora.png" alt="" class="img-fluid">
+                                <a href="https://github.com/beatrizalmc/calculadora-react-dio" class="pt-2">
+                                    <span class="projeto-area">Web Development</span>
+                                </a>
+                                <a href="https://github.com/beatrizalmc/calculadora-react-dio">
+                                    <span class="projeto-nome">Calculator with React</span>
+                                </a>
+                            </div>
+                            <div class="swiper-slide d-flex flex-column gap-1" data-categoria="web">
+                                <img src="../images/proj-teclado-musical.png" alt="" class="img-fluid">
+                                <a href="https://github.com/beatrizalmc/projeto-teclado-musical" class="pt-2">
+                                    <span class="projeto-area">Web Development</span>
+                                </a>
+                                <a href="https://github.com/beatrizalmc/projeto-teclado-musical">
+                                    <span class="projeto-nome">Musical Keyboard</span>
+                                </a>
+                            </div>
+                            <div class="swiper-slide d-flex flex-column gap-1" data-categoria="back-end">
+                                <img src="../images/proj-banco-php.png" alt="" class="img-fluid">
+                                <a href="https://github.com/beatrizalmc/sistema-bancario-em-php" class="pt-2">
+                                    <span class="projeto-area">Back-end</span>
+                                </a>
+                                <a href="https://github.com/beatrizalmc/sistema-bancario-em-php">
+                                    <span class="projeto-nome">Banking System in PHP</span>
+                                </a>
+                            </div>
+                            <div class="swiper-slide d-flex flex-column gap-1" data-categoria="back-end">
+                                <img src="../images/proj-mercado-python.png" alt="" class="img-fluid">
+                                <a href="https://github.com/beatrizalmc/Simulacao-de-Mercado-com-Python" class="pt-2">
+                                    <span class="projeto-area">Back-end</span>
+                                </a>
+                                <a href="https://github.com/beatrizalmc/Simulacao-de-Mercado-com-Python">
+                                    <span class="projeto-nome">Market Simulation with Python</span>
+                                </a>
+                            </div>
+                            <div class="swiper-slide d-flex flex-column gap-1" data-categoria="dados">
+                                <img src="../images/proj-videogame.png" alt="" class="img-fluid">
+                                <a href="https://github.com/beatrizalmc/videogame-sales-analysis" class="pt-2">
+                                    <span class="projeto-area">Data Analysis</span>
+                                </a>
+                                <a href="https://github.com/beatrizalmc/videogame-sales-analysis">
+                                    <span class="projeto-nome">Videogame Sales Analysis</span>
+                                </a>
+                            </div>
+                            <div class="swiper-slide d-flex flex-column gap-1" data-categoria="web">
+                                <img src="../images/proj-form-matricula.png" alt="" class="img-fluid">
+                                <a href="https://github.com/beatrizalmc/formulario-matricula" class="pt-2">
+                                    <span class="projeto-area">Web Development</span>
+                                </a>
+                                <a href="https://github.com/beatrizalmc/formulario-matricula">
+                                    <span class="projeto-nome">Registration Form</span>
+                                </a>
+                            </div>
+                            <div class="swiper-slide d-flex flex-column gap-1" data-categoria="web">
+                                <img src="../images/proj-pokedex.png" alt="" class="img-fluid">
+                                <a href="https://github.com/beatrizalmc/projeto-pokedex-js" class="pt-2">
+                                    <span class="projeto-area">Web Development</span>
+                                </a>
+                                <a href="https://github.com/beatrizalmc/projeto-pokedex-js">
+                                    <span class="projeto-nome">Pokedex with API Consumption</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="setas">
+                    <div class="swiper-button-prev swiper-prev-proj"></div>
+                    <div class="swiper-button-next swiper-next-proj"></div>
+                </div>
+                <div class="obs-projetos text-center mt-4">
+                    <span><i>Obs. Here are just a few of my projects...</i></span>
+                </div>
+            </div>
+        </section>
+
+        <!--Contact-->
+        <section class="contato" id="contato">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="email-contato col-12">
+                        <h2>Contact</h2>
+                        <div>
+                            <form action="#" class="d-flex flex-row gap-2 align-items-center justify-content-center">
+                                <input type="text" placeholder="Write your email">
+                                <button type="button">Contact me</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="infos-pagina col-12 d-flex flex-column align-items-center gap-1">
+                        <div>
+                            <span class="logo">Bia &lt;/&gt;</span>
+                        </div>
+                        <div>
+                            <nav>
+                                <ul class="d-flex flex-row gap-4">
+                                    <li><a href="#sobre-mim">About me</a></li>
+                                    <li><a href="#experiencias">Experiences</a></li>
+                                    <li><a href="#habilidades">Skills</a></li>
+                                    <li><a href="#projetos">Projects</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="redes-contato d-flex flex-row gap-3">
+                            <a href="https://www.linkedin.com/in/beatrizalmc" target="_blank">
+                                <img src="../images/icons/linkedin.svg" alt="LinkedIn">
+                            </a>
+                            <a href="https://github.com/beatrizalmc" target="_blank">
+                                <img src="../images/icons/github.svg" alt="GitHub">
+                            </a>
+                            <a href="mailto:beatriz.almc@hotmail.com">
+                                <img src="../images/icons/email.svg" alt="Email">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>© 2026 <span class="nome">Beatriz Almeida</span> All rights reserved, Inc.</span>
+    </footer>
+    
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <button class="btn-scroll-top" id="btnScrollTop" aria-label="Voltar ao topo">
+        <img src="../images/icons/seta-topo.svg" alt="Seta para cima">
+    </button>
+
+    <!--JS-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

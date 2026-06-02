@@ -37,7 +37,7 @@ O protótipo serviu como referência principal durante a implementação do site
 ## Funcionalidades
 
 - **Modo claro/escuro** — alternância de tema via botão no header
-- **Mudar PT para EN** - em deesenvolvimento
+- **Mudar PT para EN** - alternância de idiona - PT-BR e EN
 - **Menu responsivo** — navbar colapsável em dispositivos móveis
 - **Accordion de experiências** — exibição em accordion contínuo no mobile, com linha vertical animada que acompanha a abertura dos itens
 - **Carrossel de projetos** com navegação por setas (Swiper.js)

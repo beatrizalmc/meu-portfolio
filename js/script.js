@@ -6,7 +6,7 @@ dropdownsLanguages.forEach(dropdown => {
     const menu = dropdown.querySelector(".dropdown-menu-languages");
 
     btn.addEventListener("click", () => {
-        alert("Em desenvolvimento! Em breve, a opção de trocar o idioma estará disponível.");
+        // alert("Em desenvolvimento! Em breve, a opção de trocar o idioma estará disponível.");
 
         if (menu) {
             menu.classList.toggle("active");
@@ -14,32 +14,21 @@ dropdownsLanguages.forEach(dropdown => {
     });
 });
 
-// Trocar linguagem
-const BtnEnglish = document.querySelector(".btn-en");
-const BtnPortuguese = document.querySelector(".btn-pt");
+// Troca de idioma
+const btnEN = document.querySelector(".btn-en");
+const btnPT = document.querySelector(".btn-pt");
 
-const textosPT = document.querySelectorAll(".pt");
-const textosEN = document.querySelectorAll(".en");
+if (btnEN) {
+    btnEN.addEventListener("click", () => {
+        window.location.href = `${window.location.origin}/portfolio/en/`;
+    });
+}
 
-// BtnEnglish.addEventListener("click", () => {
-//     textosPT.forEach(texto => {
-//         texto.classList.add("hidden");
-//     });
-
-//     textosEN.forEach(texto => {
-//         texto.classList.remove("hidden");
-//     });
-// });
-
-// BtnPortuguese.addEventListener("click", () => {
-//     textosPT.forEach(texto => {
-//         texto.classList.remove("hidden");
-//     });
-
-//     textosEN.forEach(texto => {
-//         texto.classList.add("hidden");
-//     });
-// });
+if (btnPT) {
+    btnPT.addEventListener("click", () => {
+        window.location.href = `${window.location.origin}/portfolio/`;
+    });
+}
 
 // Trocar tema claro/escuro
 const dropdownsTemas = document.querySelectorAll(".dropdown-temas");
