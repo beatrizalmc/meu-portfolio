@@ -1,18 +1,18 @@
 // Dropdown Languages no Header e alert
-const dropdownsLanguages = document.querySelectorAll(".dropdown-languages");
+// const dropdownsLanguages = document.querySelectorAll(".dropdown-languages");
 
-dropdownsLanguages.forEach(dropdown => {
-    const btn = dropdown.querySelector(".dropdown-languages-btn");
-    const menu = dropdown.querySelector(".dropdown-menu-languages");
+// dropdownsLanguages.forEach(dropdown => {
+//     const btn = dropdown.querySelector(".dropdown-languages-btn");
+//     const menu = dropdown.querySelector(".dropdown-menu-languages");
 
-    btn.addEventListener("click", () => {
-        // alert("Em desenvolvimento! Em breve, a opção de trocar o idioma estará disponível.");
+//     btn.addEventListener("click", () => {
+//         alert("Em desenvolvimento! Em breve, a opção de trocar o idioma estará disponível.");
 
-        if (menu) {
-            menu.classList.toggle("active");
-        }
-    });
-});
+//         if (menu) {
+//             menu.classList.toggle("active");
+//         }
+//     });
+// });
 
 // Troca de idioma
 const btnEnglish = document.querySelectorAll(".btn-en");
@@ -20,13 +20,13 @@ const btnPortuguese = document.querySelectorAll(".btn-pt");
 
 btnEnglish.forEach(btn => {
     btn.addEventListener("click", () => {
-        window.location.href = `${window.location.origin}/meu-portfolio/en/`;
+        window.location.href = "/meu-portfolio/en/";
     });
 });
 
 btnPortuguese.forEach(btn => {
     btn.addEventListener("click", () => {
-        window.location.href = `${window.location.origin}/meu-portfolio/`;
+        window.location.href = "/meu-portfolio/";
     });
 });
 
