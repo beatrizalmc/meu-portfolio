@@ -1,788 +1,1266 @@
+:root {
+    --fundo: #FBF7F5;
+    --superficie: #FFFFFF;
+    --texto: #1E1A1D;
+    --texto-suave: #5C5459;
+    --destaque: #B53F63;
+    --destaque-hover: #962F4E;
+    --sobre-destaque: #FFFFFF;
+    --rosa-suave: #FCE9EE;
+    --rosa-borda: #F0BFCC;
+    --borda: #E9DCE0;
+    --borda-forte: #B9A9B0;
+    --sombra: 0 6px 20px rgba(30, 26, 29, 0.12);
+    --fundo-icone: #FFFFFF;
+
+    --fonte-titulo: 'Poppins', sans-serif;
+    --fonte-corpo: 'Inter', sans-serif;
+    --fonte-codigo: 'JetBrains Mono', monospace;
+
+    --altura-header: 72px;
+}
+
+body.dark {
+    --fundo: #151215;
+    --superficie: #1F1B1E;
+    --texto: #F4EEF0;
+    --texto-suave: #B9AEB3;
+    --destaque: #E27A9A;
+    --destaque-hover: #EE93AE;
+    --sobre-destaque: #151215;
+    --rosa-suave: #2B1F25;
+    --rosa-borda: #4A3340;
+    --borda: #332B30;
+    --borda-forte: #5E5058;
+    --sombra: 0 6px 20px rgba(0, 0, 0, 0.5);
+    --fundo-icone: #F4EEF0;
+}
+
+:root:has(body.dark) {
+    color-scheme: dark;
+}
+
+/* ==========================================================
+   Base
+   ========================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 html {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
 }
 
 body {
-    color: #000000;
-    background-color: #FFFFFF;
+    font-family: var(--fonte-corpo);
+    color: var(--texto);
+    background-color: var(--fundo);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
 }
 
+h1, h2, h3, h4,
+.logo {
+    font-family: var(--fonte-titulo);
+}
+
+section {
+    scroll-margin-top: var(--altura-header);
+}
+
+/* Foco visível para navegação por teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--destaque);
+    outline-offset: 3px;
+}
+
+main:focus {
+    outline: none;
+}
+
+/* Link "Pular para o conteúdo" (aparece só ao navegar com Tab) */
+.pular-conteudo {
+    position: absolute;
+    top: -60px;
+    left: 16px;
+    z-index: 2000;
+    background-color: var(--destaque);
+    color: var(--sobre-destaque);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 12px;
+    transition: top 0.2s;
+}
+
+.pular-conteudo:focus {
+    top: 12px;
+}
+
+/* ==========================================================
+   Header
+   ========================================================== */
 header {
-    padding: 20px 90px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: var(--altura-header);
+    display: flex;
+    align-items: center;
+    background-color: var(--fundo);
+    border-bottom: 1px solid var(--borda);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Mesmo recuo lateral das seções, para o logo alinhar com o conteúdo */
+header > .container-fluid {
+    padding-left: 52px;
+    padding-right: 52px;
+}
+
+@media (min-width: 1400px) {
+    header > .container-fluid {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
 }
 
 header .logo {
-    font-size: 28px;
-    font-weight: 500;
-    letter-spacing: 3%;
-    color: #D76483;
-}
-
-header nav ul li,
-header nav ul li a,
-.infos-pagina nav ul li,
-.infos-pagina nav ul li a {
-    list-style: none;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--destaque);
     text-decoration: none;
-    color: #000000;
-    font-size: 20px;
-    letter-spacing: 3%;
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header nav ul li a {
+    color: var(--texto-suave);
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    padding-bottom: 4px;
     border-bottom: 2px solid transparent;
-    transition: 0.3s;
+    transition: color 0.3s, border-color 0.3s;
 }
 
-.dropdown-languages,
-.dropdown-temas {
-    position: relative;
-    display: inline-block;
+header nav ul li a:hover {
+    color: var(--texto);
+    border-bottom-color: var(--destaque);
 }
 
-.dropdown-menu-languages,
-.dropdown-menu-temas {
-    position: absolute;
-    display: none;
-    margin-top: 4px;
-}
-
-.dropdown-menu-languages.active,
-.dropdown-menu-temas.active {
-    display: block;
-}
-
-.btn-languages button,
-.btn-temas button {
-    background-color: #D76483;
-    color: #FFFFFF;
-    border: none;
-}
-
-.btn-languages button {
-    padding: 10px 13px;
+/* Botões redondos: idioma, tema e menu */
+.btn-idioma,
+.btn-tema,
+.menu-mobile-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--texto);
+    background-color: transparent;
+    border: 1px solid var(--borda-forte);
     border-radius: 100%;
+    font-family: var(--fonte-codigo);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
 }
 
-.btn-temas button {
-    padding: 10px 10px;
-    border-radius: 100%;
-}
-
-header nav ul li a:hover,
-.infos-pagina nav ul li a:hover {
-    border-bottom: 2px solid #D76483;
-}
-
-.btn-languages button:hover,
-.btn-temas button:hover {
-    box-shadow: 1px 1px 19px 1px rgba(0,0,0,0.4);
+.btn-idioma:hover,
+.btn-tema:hover,
+.menu-mobile-btn:hover {
+    background-color: var(--rosa-suave);
+    border-color: var(--destaque);
     transform: translateY(-2px);
 }
 
-header .menu-mobile-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
+/* Tema: mostra a lua no claro e o sol no escuro */
+.btn-tema .icone-sol,
+body.dark .btn-tema .icone-lua {
+    display: none;
 }
 
-/* <!--Sobre mim: Introdução--> */
-.sobre-mim {
-    padding: 140px 40px;
+body.dark .btn-tema .icone-sol {
+    display: block;
 }
 
-.sobre-mim .apresentacao .cumprimento,
-.sobre-mim .apresentacao .meu-nome {
-    font-size: 24px;
-    font-weight: 600;
-    letter-spacing: 3%;
-    margin-bottom: 0;
+/* Menu mobile: escondido no desktop */
+.menu-mobile-btn {
+    display: none;
 }
 
-.sobre-mim .apresentacao .meu-nome {
-    color: #D76483;
+.menu-mobile-btn .icone-fechar,
+.menu-mobile-btn[aria-expanded="true"] .icone-menu {
+    display: none;
 }
 
-.sobre-mim .apresentacao h1 {
-    font-size: 90px;
-    font-weight: bold;
-    letter-spacing: 3%;
-    line-height: 120%;
+.menu-mobile-btn[aria-expanded="true"] .icone-fechar {
+    display: block;
 }
 
-.sobre-mim .apresentacao .minha-descricao {
-    padding: 34px 140px 30px 0;
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: 3%;
+@media (max-width: 991.98px) {
+
+    .menu-mobile-btn {
+        display: inline-flex;
+    }
+
+    header .menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 12px 20px 20px;
+        background-color: var(--fundo);
+        border-bottom: 1px solid var(--borda);
+        box-shadow: var(--sombra);
+    }
+
+    header .menu.active {
+        display: block;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    header nav ul li a {
+        display: block;
+        font-size: 18px;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--borda);
+    }
 }
 
-.sobre-mim .descricao .btn-download-cv {
-    background-color: #D76483;
-    color: #FFFFFF;
-    font-size: 22px;
-    font-weight: 600;
-    letter-spacing: 3%;
-    border: none;
-    border-radius: 12px;
-    padding: 10px 20px;
+@media (max-width: 576px) {
+    header > .container-fluid {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 }
 
-.sobre-mim .descricao a:hover,
-.contato .redes-contato a:hover {
-    transform: translateY(-3px);
-}
-
-/* <!--Experiências Profissionais--> */
-.experiencias {
-    padding: 40px 40px 0 40px;
-}
-
-.experiencias h2 {
-    padding-bottom: 20px;
-}
-
-.experiencias h2,
-.habilidades h2,
-.projetos h2,
-.contato h2 {
-    font-size: 65px;
-    font-weight: 600;
-    letter-spacing: 3%;
-    text-align: center;
-}
-
-.experiencias .experiencia {
-    border: 1px solid #D76483;
-    border-radius: 12px;
-    background-color: #FFD6E0;
-    padding: 26px 60px;
-    margin: 10px 18px;
-}
-
-.experiencias .ano-experiencia span {
-    font-size: 22px;
-    font-weight: bold;
-    letter-spacing: 3%;
-}
-
-.experiencias .experiencia h3 {
-    font-size: 32px;
-    font-weight: 600;
-    letter-spacing: 3%;
-}
-
-.experiencias .experiencia h4 {
-    font-size: 24px;
-    font-weight: 400;
-    letter-spacing: 3%;
-}
-
-.experiencias .experiencia p {
-    font-size: 21px;
-    font-weight: 400;
-    letter-spacing: 3%;
-    padding: 10px 0;
-}
-
-.experiencias .aprendizados span {
-    color: #FFFFFF;
-    font-size: 18px;
-    font-weight: 400;
-    letter-spacing: 3%;
-    border-radius: 12px;
-    background-color: #D76483;
-    padding: 10px 20px;
-}
-
-.experiencias .todas-experiencias {
-    position: relative;
-}
-
-.experiencias .todas-experiencias::before {
-    content: "";
-    background: url("../images/linha-experiencias.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 12px;
-    height: 1680px;
-    position: absolute;
-    left: 13px;
-    top: 100px;
-}
-
-/* <!--Habilidades--> */
-.habilidades, .projetos, .contato {
-    padding: 0 40px;
-}
-
-.habilidades h2, .projetos h2, .contato h2 {
-    padding: 80px 0 10px 0;
-}
-
-.habilidades .area-habilidade {
-    border: 3px solid #FFD6E0;
-    border-radius: 12px;
-    padding: 24px 38px 40px 38px;
-    min-height: 270px;
-}
-
-.habilidades .area-habilidade h3 {
-    font-size: 28px;
-    font-weight: 600;
-    letter-spacing: 3%;
-    padding-bottom: 16px;
-}
-
-.habilidades .area-habilidade span {
-    color: #000000;
-    font-size: 20px;
-    font-weight: 400;
-    letter-spacing: 3%;
-    background-color: #FFD6E0;
-    border: 3px solid #EF9CA4;
-    border-radius: 12px;
-    padding: 12px 18px;
-}
-
-/* <!--Projetos--> */
-.projetos .filtros button {
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 3%;
-    color: #000000;
-    border: 0.4px solid #545454;
-    border-radius: 12px;
-    padding: 10px 20px;
-}
-
-.projetos .swiper .swiper-slide {
-    width: calc(33.33% - 30px);
-    height: auto;
-    margin-top: 50px;
-    background-color: #FFD6E0;
-    border: 1px solid #D76483;
-    border-radius: 12px;
-    padding: 30px 30px 30px 40px;
-}
-
-.projetos .swiper .swiper-slide img {
-    width: 100%;
-    height: auto;
-}
-
-.projetos .swiper .swiper-slide a {
-    text-decoration: none;
-    letter-spacing: 3%;
-    color: #000;
-}
-
-.projetos .swiper .swiper-slide a .projeto-area {
-    font-size: 16px;
-    font-weight: 500;
-    color: #D76483;
-}
-
-.projetos .swiper .swiper-slide a .projeto-nome {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.projetos .setas {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.projetos .setas .swiper-next-proj,
-.projetos .setas .swiper-prev-proj {
-    position: static;
-    color: #000000;
-    width: 30px;
-    height: 30px;
-}
-
-.projetos .obs-projetos span {
-    color: #545454;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 3%;
-}
-
-.hidden {
-    display: none !important;
-}
-
-.filtros button.active {
-    background-color: #D76483;
-    color: #FFFFFF;
-    border: 1px solid #EF9CA4;
-    box-shadow: 1px 1px 19px 1px rgba(0,0,0,0.4);
-}
-
-/* <!--Contato--> */
-.contato form button {
-    color: #FFFFFF;
-    font-size: 22px;
-    font-weight: 600;
-    letter-spacing: 3%;
-    background-color: #D76483;
-    border: none;
-    border-radius: 12px;
-    padding: 12px 20px;
-}
-
-.contato form input {
-    border: 1px solid #545454;
-    border-radius: 12px;
-    padding: 10px 20px;
-    width: 50%;
-    height: 55px;
-}
-
-.contato .infos-pagina {
-    padding-top: 100px;
-    padding-bottom: 48px;
-}
-
-.contato .infos-pagina .logo {
-    font-size: 22px;
-    font-weight: 500;
-    letter-spacing: 3%;
-    color: #D76483;
-}
-
-.contato form button:hover {
-    box-shadow: 1px 1px 19px 1px rgba(0,0,0,0.4);
-}
-
-/* <!--Footer--> */
+/* ==========================================================
+   Footer
+   ========================================================== */
 footer {
-    background-color: #EF9CA4;
-    color: #000000;
-    font-size: 18px;
-    font-weight: 400;
-    letter-spacing: 3%;
+    background-color: var(--rosa-suave);
+    border-top: 1px solid var(--borda);
+    color: var(--texto);
     text-align: center;
-    padding: 20px 0;
+    padding: 40px 12px 28px;
+    transition: background-color 0.3s;
+}
+
+footer .logo {
+    color: var(--destaque);
+    font-size: 22px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+footer .rodape-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 28px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer .rodape-nav a {
+    color: var(--texto);
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+footer .rodape-nav a:hover {
+    border-bottom-color: var(--destaque);
+}
+
+footer .direitos {
+    margin: 8px 0 0;
+    color: var(--texto-suave);
+    font-size: 14px;
 }
 
 footer .nome {
-    color: #D76483;
-    font-weight: bold;
-}
-
-/* Modo Dark */
-body.dark {
-    background-color: #121212;
-    color: #FFFFFF;
-}
-
-body.dark header a,
-body.dark .contato a {
-    color: #FFFFFF;
-}
-
-body.dark .sobre-mim .descricao a,
-body.dark .contato .redes-contato a {
-    background-color: #FFFFFF;
-    padding: 8px;
-    border-radius: 12px;
-}
-
-body.dark .experiencia h3,
-body.dark .experiencia h4,
-body.dark .experiencia p{
-    color: #000000;
+    color: var(--destaque);
+    font-weight: 700;
 }
 
 /*Botão Scroll Top*/
 .btn-scroll-top {
-  position: fixed;
-  bottom: 90px;
-  right: 35px;
-  width: 50px;
-  max-width: 100%;
-  height: 50px;
-  font-size: 18px;
-  background: #D76483;
-  border: 0;
-  border-radius: 100%;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    color: var(--sobre-destaque);
+    background-color: var(--destaque);
+    border: 0;
+    border-radius: 100%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s, background-color 0.3s;
 }
 
 .btn-scroll-top.show {
-  opacity: 1;
+    opacity: 1;
+    visibility: visible;
 }
 
 .btn-scroll-top:hover {
-    box-shadow: 1px 1px 19px 1px rgba(0,0,0,0.4);
+    background-color: var(--destaque-hover);
+    transform: translateY(-3px);
 }
 
-/* Responsividade */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* ==========================================================
+   Componentes reutilizáveis
+   ========================================================== */
+[hidden] {
+    display: none !important;
+}
+
+.rotulo-secao {
+    font-family: var(--fonte-codigo);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--destaque);
+    margin-bottom: 8px;
+}
+
+.btn-principal,
+.btn-secundario {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--fonte-titulo);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 12px 24px;
+    border: 1px solid var(--destaque);
+    border-radius: 12px;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.btn-principal {
+    color: var(--sobre-destaque);
+    background-color: var(--destaque);
+}
+
+.btn-principal:hover {
+    color: var(--sobre-destaque);
+    background-color: var(--destaque-hover);
+    border-color: var(--destaque-hover);
+    transform: translateY(-2px);
+}
+
+.btn-secundario {
+    color: var(--texto);
+    background-color: transparent;
+    border-color: var(--borda-forte);
+}
+
+.btn-secundario:hover {
+    color: var(--texto);
+    background-color: var(--rosa-suave);
+    border-color: var(--destaque);
+    transform: translateY(-2px);
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.chips li {
+    color: var(--texto);
+    font-family: var(--fonte-codigo);
+    font-size: 14px;
+    background-color: var(--rosa-suave);
+    border: 1px solid var(--rosa-borda);
+    border-radius: 12px;
+    padding: 6px 14px;
+}
+
+/* Aparece suavemente ao rolar (só se o JavaScript estiver ativo) */
+.js .revelar {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js .revelar.visivel {
+    opacity: 1;
+    transform: none;
+}
+
+/* ==========================================================
+   Apresentação (Hero)
+   ========================================================== */
+.hero,
+.sobre-mim,
+.habilidades,
+.projetos,
+.experiencias,
+.contato {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.hero {
+    padding-top: 72px;
+    padding-bottom: 96px;
+}
+
+.hero .apresentacao .cumprimento {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--texto-suave);
+    margin-bottom: 0;
+}
+
+.hero .apresentacao .meu-nome {
+    font-family: var(--fonte-titulo);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--destaque);
+    margin-bottom: 0;
+}
+
+.hero .apresentacao h1 {
+    font-size: clamp(32px, 10vw, 56px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 8px 0 0;
+}
+
+.hero .apresentacao h1 .atribuicao {
+    white-space: nowrap;
+}
+
+.hero .apresentacao .minha-descricao {
+    max-width: 560px;
+    font-size: 18px;
+    color: var(--texto-suave);
+    margin: 24px 0 32px;
+}
+
+.hero .redes {
+    margin-top: 28px;
+}
+
+.hero .redes a {
+    color: var(--texto-suave);
+    transition: color 0.3s, transform 0.3s;
+}
+
+.hero .redes a:hover {
+    color: var(--destaque);
+    transform: translateY(-3px);
+}
+
+.hero-visual {
+    position: relative;
+    max-width: 380px;
+    margin: 0 auto 48px;
+}
+
+.hero-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Cartão de código: detalhe visual com o foco atual */
+.cartao-codigo {
+    position: absolute;
+    left: 50%;
+    bottom: -28px;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 100%;
+    background-color: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+    padding: 12px 18px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.cartao-codigo pre {
+    margin: 0;
+    color: var(--texto-suave);
+    font-family: var(--fonte-codigo);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.cartao-codigo code {
+    font-family: inherit;
+    color: inherit;
+}
+
+.cartao-codigo .c-chave {
+    color: var(--destaque);
+}
+
+.cartao-codigo .c-texto {
+    color: var(--texto);
+}
+
+/* Entrada suave ao carregar a página */
+@keyframes entrada {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.hero .escrita > * {
+    animation: entrada 0.7s ease both;
+}
+
+.hero .escrita > *:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.hero .escrita > *:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.hero-visual {
+    animation: entrada 0.8s 0.15s ease both;
+}
+
+/* ==========================================================
+   Sobre mim
+   ========================================================== */
+.sobre-mim {
+    padding-top: 40px;
+    padding-bottom: 96px;
+}
+
+.sobre-mim h2 {
+    font-size: clamp(32px, 4vw, 44px);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.sobre-mim .texto-sobre p {
+    max-width: 68ch;
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+
+.sobre-mim .texto-sobre h3 {
+    color: var(--texto-suave);
+    font-family: var(--fonte-codigo);
+    font-size: 14px;
+    font-weight: 500;
+    margin: 32px 0 12px;
+}
+
+@media (min-width: 992px) {
+    .hero .apresentacao h1 {
+        font-size: clamp(44px, 6.2vw, 72px);
+    }
+}
+
 @media (min-width: 1400px) {
-    .sobre-mim, .experiencias, .habilidades, .projetos, .contato {
+    .hero,
+    .sobre-mim,
+    .habilidades,
+    .projetos,
+    .experiencias,
+    .contato {
         padding-left: 10px;
         padding-right: 10px;
     }
 }
 
-@media (max-width: 1200px) {
-    header {
-        padding: 20px 50px;
-    }
-    .sobre-mim {
-        padding: 80px 40px;
+@media (max-width: 991.98px) {
+    .hero {
+        padding-top: 32px;
+        padding-bottom: 64px;
     }
 
-    .sobre-mim .img-foto-principal {
-        margin-top: 180px;
+    .hero-visual {
+        max-width: 260px;
+        margin-bottom: 32px;
     }
 
-    .sobre-mim .img-foto-principal img {
-        max-width: 100%;
-        height: auto;
+    /* No mobile o cartão fica abaixo da foto, sem cobrir a ilustração */
+    .cartao-codigo {
+        position: static;
+        transform: none;
+        margin: 16px auto 0;
     }
 
-    .sobre-mim .apresentacao .minha-descricao {
-        padding: 34px 30px 30px 0;
-    }
-
-    .experiencias .todas-experiencias::before {
-        height: 1600px;
-        top: 180px;
-    }
-
-    .experiencias h2 {
-        padding: 0 200px 20px 200px;
-    }
-
-    .experiencias .aprendizados span {
-        text-align: center;
-    }
-
-    .habilidades .area-habilidade {
-        min-height: 340px;
-    }
-
-    .projetos .swiper .swiper-slide {
-        width: calc(50% - 30px);
-    }
-}
-
-@media (max-width: 992px) {
-    header {
-        position: relative;
-    }
-
-    .menu-mobile-btn {
-        display: block;
-    }
-
-    .menu-mobile {
-        display: none;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 100%;
-        padding-left: 20px;
-    }
-
-    .menu-mobile.active {
-        display: block;
-    }
-
-    .botoes-mobile {
-        padding-left: 30px;
-    }
-
-    .sobre-mim {
-        padding: 10px 40px 80px 40px;
-    }
-
-    .sobre-mim .escrita {
-        order: 2;
-        margin-top: 40px;
-    }
-
-    .sobre-mim .img-foto-principal {
-        margin-top: 0;
-        text-align: right;
-    }
-
-    .sobre-mim .apresentacao h1 {
-        font-size: 72px;
-    }
-
-    .experiencias h2 {
-        padding: 0 0 20px 0;
-    }
-
-    .experiencias .aprendizados {
-        flex-wrap: wrap;
-    }
-
-    .experiencias .todas-experiencias::before {
-        display: none;
-    }
-
-    .experiencias .accordion-experiencia {
-        border: 1px solid #D76483;
-        border-radius: 12px;
-        background-color: #FFD6E0;
-        margin: 10px 18px;
-        overflow: hidden;
-    }
-
-    .experiencias .btn-experiencias {
-        border: none;
-        border-radius: 0;
-        background-color: transparent;
-        padding: 26px 60px 20px 60px;
-        margin: 0;
-    }
-
-    .experiencias .btn-experiencias:focus {
-        box-shadow: none;
-    }
-
-    .experiencias .collapse .experiencia,
-    .experiencias .collapsing .experiencia {
-        border: none;
-        border-radius: 0;
-        background-color: transparent;
-        margin: 0;
-        padding: 0 60px 26px 60px;
-    }
-
-    .btn-experiencias h3 {
-        font-size: 32px;
-        font-weight: 600;
-        letter-spacing: 3%;
-    }
-
-    .habilidades .area-habilidade {
-        min-height: 190px;
-    }
-
-    .habilidades .segunda-coluna {
-        margin-top: 24px;
-    }
-
-    .projetos .swiper .swiper-slide {
-        width: calc(65% - 30px);
-    }
-}
-
-@media (max-width: 768px) {
-    header {
-        padding: 20px 40px;
-    }
-
-    .sobre-mim .img-foto-principal {
-        text-align: center;
-    }
-
-    .sobre-mim .apresentacao h1 {
-        font-size: 52px;
-    }
-
-    .experiencias .btn-experiencias {
-        padding: 26px 40px 20px 40px;
-        color: #000000;
-    }
-
-    .projetos .swiper .swiper-slide {
-        width: calc(80% - 30px);
-    }
-
-    .infos-pagina nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        padding-top: 16px;
-        padding-bottom: 16px;
-        padding-left: 0;
+    .sobre-mim .col-lg-4 {
+        margin-bottom: 20px;
     }
 }
 
 @media (max-width: 576px) {
-    header {
-        padding: 16px 14px;
+    .hero,
+    .sobre-mim,
+    .habilidades,
+    .projetos,
+    .experiencias,
+    .contato {
+        padding-left: 4px;
+        padding-right: 4px;
     }
 
-    header .logo {
-        font-size: 22px;
+    .hero .apresentacao .minha-descricao,
+    .sobre-mim .texto-sobre p {
+        font-size: 16px;
     }
 
-    header nav ul li, header nav ul li a {
-        font-size: 18px;
-    }
-
-    .menu-mobile {
-        background-color: #FFFFFF;
-        text-align: center;
-        padding: 0;
-    }
-
-    .menu-mobile ul {
-        padding: 0;
-    }
-
-    .menu-mobile .botoes-mobile {
+    .btn-principal,
+    .btn-secundario {
+        flex: 1 1 auto;
         justify-content: center;
-        margin-bottom: 20px;
-        padding: 0;
-    }
-
-    .sobre-mim {
-        padding: 0 4px 70px 4px;
-    }
-
-    .sobre-mim .apresentacao h1,
-    .experiencias h2,
-    .habilidades h2, .projetos h2, .contato h2 {
-        font-size: 32px;
-    }
-
-    .sobre-mim .apresentacao .minha-descricao {
-        padding: 20px 20px 20px 0;
-    }
-
-    .sobre-mim .apresentacao .minha-descricao {
-        font-size: 16px;
-    }
-
-    .sobre-mim .descricao {
-        justify-content: center;
-    }
-
-    .sobre-mim .img-foto-principal img {
-        width: 230px;
-        height: auto;
-    }
-
-    .experiencias {
-        padding: 40px 0 0 16px;
-    }
-
-    .experiencias .ano-experiencia span,
-    .experiencias .experiencia h4,
-    .experiencias .experiencia p {
-        font-size: 16px;
-    }
-
-    .btn-experiencias h3,
-    .contato .infos-pagina .logo {
-        font-size: 18px;
-    }
-
-    .experiencias .btn-experiencias {
-        padding: 12px 20px 12px 20px;
-    }
-
-    .experiencias .collapse .experiencia, .experiencias .collapsing .experiencia {
-        padding: 0 20px 26px 20px;
-    }
-
-    .experiencias .aprendizados span {
-        font-size: 12px;
-        padding: 10px 16px;
-    }
-
-    .habilidades, .projetos, .contato {
-        padding: 0 4px;
-    }
-
-    .habilidades .area-habilidade h3 {
-        font-size: 22px;
-        text-align: center;
-    }
-
-    .habilidades .area-habilidade span {
-        font-size: 14px;
-        padding: 8px 12px;
-    }
-
-    .habilidades .area-habilidade {
-        padding: 20px 10px 30px 10px;
-        min-height: 100px;
-        text-align: center;
-    }
-
-    .projetos .filtros {
-        flex-wrap: wrap;
-    }
-
-    .projetos .swiper .swiper-slide {
-        width: calc(100% - 30px);
-        height: auto;
-        margin-top: 30px;
-        padding: 30px 20px 0 20px;
-    }
-
-    .projetos .filtros button {
-        font-size: 16px;
-        padding: 8px 18px;
-    }
-
-    .habilidades .area-habilidade div {
-        align-items: center;
-        justify-content: center;
-        gap: 10px !important;
-    }
-
-    .contato .email-contato form {
-        flex-direction: column !important;
-    }
-
-    .contato form input {
-        width: 70%;
-    }
-
-    .contato form button {
-        font-size: 16px;
-        padding: 8px 18px;
-    }
-
-    .infos-pagina nav ul {
-        gap: 12px !important;
-    }
-
-    .infos-pagina nav ul li, .infos-pagina nav ul li a {
-        font-size: 16px;
-    }
-
-    .projetos .swiper .swiper-slide a .projeto-area {
-        font-size: 14px;
-    }
-
-    .projetos .swiper .swiper-slide a .projeto-nome {
-        font-size: 18px;
-    }
-
-    footer {
-        font-size: 12px;
-        padding: 10px 0;
     }
 }
 
-/* Breakpoints:
-<576px - OK - habilidades accordion
->=576px - sm OK - habilidades accordion
->=768px - md OK
->=992px - lg OK
->=1200px - xl OK
->=1400px - xxl OK
-*/
+/* ==========================================================
+   Projetos
+   ========================================================== */
+.projetos,
+.habilidades,
+.experiencias,
+.contato {
+    padding-top: 40px;
+    padding-bottom: 96px;
+}
+
+.projetos h2,
+.habilidades h2,
+.experiencias h2,
+.contato h2 {
+    font-size: clamp(32px, 4vw, 44px);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.intro-secao {
+    max-width: 560px;
+    color: var(--texto-suave);
+    font-size: 18px;
+    margin-top: 8px;
+}
+
+.projetos .filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.projetos .filtros button {
+    color: var(--texto);
+    font-size: 15px;
+    font-weight: 500;
+    background-color: transparent;
+    border: 1px solid var(--borda-forte);
+    border-radius: 12px;
+    padding: 8px 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.projetos .filtros button:hover {
+    border-color: var(--destaque);
+    background-color: var(--rosa-suave);
+}
+
+.projetos .filtros button[aria-pressed="true"] {
+    color: var(--sobre-destaque);
+    background-color: var(--destaque);
+    border-color: var(--destaque);
+}
+
+.lista-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.card-projeto {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.card-projeto:hover {
+    border-color: var(--destaque);
+    transform: translateY(-4px);
+    box-shadow: var(--sombra);
+}
+
+.card-projeto-imagem {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background-color: var(--rosa-suave);
+    border-bottom: 1px solid var(--borda);
+}
+
+/* A imagem preenche o quadro sem esticá-lo (prints verticais ficam recortados) */
+.card-projeto-imagem img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Quando o projeto ainda não tem imagem */
+.card-projeto-sem-imagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--destaque);
+    font-family: var(--fonte-codigo);
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.card-projeto-corpo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 12px;
+    padding: 20px 22px 22px;
+}
+
+.projeto-area {
+    color: var(--destaque);
+    font-family: var(--fonte-codigo);
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Selo de status no canto da imagem */
+.projeto-status {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: var(--texto);
+    font-size: 12px;
+    font-weight: 600;
+    background-color: var(--superficie);
+    border: 1px solid var(--rosa-borda);
+    border-radius: 12px;
+    padding: 3px 12px;
+}
+
+.projeto-nome {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.projeto-descricao {
+    color: var(--texto-suave);
+    font-size: 15px;
+    margin: 0;
+}
+
+.projeto-funcionalidades {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--texto-suave);
+    font-size: 14px;
+}
+
+.projeto-tecnologias {
+    gap: 8px;
+}
+
+.projeto-tecnologias li {
+    font-size: 12px;
+    padding: 3px 10px;
+}
+
+.projeto-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 6px;
+}
+
+.projeto-links a {
+    font-size: 14px;
+    padding: 8px 16px;
+}
+
+.projetos .mais-projetos {
+    margin-top: 40px;
+}
+
+@media (max-width: 576px) {
+    .lista-projetos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================
+   Habilidades
+   ========================================================== */
+.legenda-niveis {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    margin: 24px 0 0;
+    padding: 0;
+    color: var(--texto-suave);
+    font-size: 14px;
+    list-style: none;
+}
+
+.legenda-niveis li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lista-habilidades {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.card-habilidade {
+    background-color: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 22px 24px 24px;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.card-habilidade:hover {
+    border-color: var(--rosa-borda);
+}
+
+.card-habilidade h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 16px;
+}
+
+.card-habilidade ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.habilidade {
+    display: grid;
+    grid-template-columns: 32px 1fr auto;
+    align-items: center;
+    column-gap: 12px;
+}
+
+.habilidade-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: var(--fundo-icone);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+}
+
+.habilidade-icone img {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+/* Tecnologias sem logo usam uma sigla */
+.habilidade-icone.sigla {
+    color: var(--destaque);
+    font-family: var(--fonte-codigo);
+    font-size: 11px;
+    font-weight: 500;
+    background-color: var(--rosa-suave);
+    border-color: var(--rosa-borda);
+}
+
+.habilidade-nome {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.habilidade-nivel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--texto-suave);
+    font-size: 13px;
+    text-align: right;
+}
+
+/* Bolinhas do nível: cheia, parcial (meio-termo) ou vazia */
+.pontos {
+    display: inline-flex;
+    gap: 4px;
+}
+
+.ponto {
+    width: 9px;
+    height: 9px;
+    border: 1.5px solid var(--destaque);
+    border-radius: 100%;
+}
+
+.ponto.cheio {
+    background-color: var(--destaque);
+}
+
+.ponto.parcial {
+    background: linear-gradient(90deg, var(--destaque) 50%, transparent 50%);
+}
+
+/* "Estudando" não mostra bolinhas: vira uma etiqueta tracejada */
+.nivel-estudando .nivel-texto {
+    padding: 1px 10px;
+    border: 1px dashed var(--borda-forte);
+    border-radius: 12px;
+}
+
+@media (max-width: 576px) {
+    .lista-habilidades {
+        grid-template-columns: 1fr;
+    }
+
+    .habilidade {
+        row-gap: 2px;
+    }
+
+    .habilidade-icone {
+        grid-row: 1 / span 2;
+    }
+
+    .habilidade-nivel {
+        grid-column: 2 / -1;
+        justify-content: flex-start;
+        text-align: left;
+    }
+}
+
+/* ==========================================================
+   Experiência e formação
+   ========================================================== */
+.subtitulo-secao {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 32px 0 24px;
+}
+
+/* Linha do tempo: uma única estrutura, a linha acompanha a altura do conteúdo */
+.linha-do-tempo {
+    position: relative;
+    margin: 0;
+    padding: 0 0 0 28px;
+    border-left: 2px solid var(--borda);
+    list-style: none;
+}
+
+.linha-do-tempo > li {
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.linha-do-tempo > li:last-child {
+    padding-bottom: 0;
+}
+
+/* Bolinha da linha do tempo (preenchida na experiência atual) */
+.linha-do-tempo > li::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: -37px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--fundo);
+    border: 3px solid var(--destaque);
+    border-radius: 100%;
+    transition: background-color 0.3s;
+}
+
+.linha-do-tempo > li.experiencia-atual::before {
+    background-color: var(--destaque);
+}
+
+.experiencia-periodo {
+    color: var(--destaque);
+    font-family: var(--fonte-codigo);
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0 0 4px;
+}
+
+.experiencia-cargo {
+    font-size: 21px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.experiencia-empresa {
+    color: var(--texto-suave);
+    font-size: 16px;
+    font-weight: 500;
+    margin: 2px 0 12px;
+}
+
+.experiencia-descricao {
+    max-width: 68ch;
+    font-size: 16px;
+    margin: 0 0 14px;
+}
+
+/* Coluna lateral: formação, iniciação científica e cursos */
+.bloco-lateral + .bloco-lateral .subtitulo-secao {
+    margin-top: 40px;
+}
+
+.lista-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card-formacao {
+    background-color: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 20px 22px;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.card-formacao:hover {
+    border-color: var(--rosa-borda);
+}
+
+.card-formacao h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.card-formacao .formacao-instituicao {
+    color: var(--texto-suave);
+    font-size: 15px;
+    font-weight: 500;
+    margin: 2px 0 0;
+}
+
+.card-formacao .formacao-descricao {
+    font-size: 15px;
+    margin: 10px 0 0;
+}
+
+.card-formacao .formacao-detalhes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 12px;
+    margin: 12px 0 0;
+    color: var(--texto-suave);
+    font-family: var(--fonte-codigo);
+    font-size: 13px;
+}
+
+.card-formacao .chips {
+    margin-top: 12px;
+}
+
+.card-formacao .chips li,
+.linha-do-tempo .chips li {
+    font-size: 12px;
+    padding: 3px 10px;
+}
+
+.card-formacao a {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--destaque);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Etiqueta de situação (Em andamento / Concluído) */
+.selo-situacao {
+    color: var(--texto);
+    font-family: var(--fonte-corpo);
+    font-size: 12px;
+    font-weight: 600;
+    background-color: var(--rosa-suave);
+    border: 1px solid var(--rosa-borda);
+    border-radius: 12px;
+    padding: 2px 10px;
+}
+
+@media (max-width: 576px) {
+    .linha-do-tempo {
+        padding-left: 22px;
+    }
+
+    .linha-do-tempo > li::before {
+        left: -31px;
+    }
+
+    .experiencia-cargo {
+        font-size: 19px;
+    }
+}
+
+/* ==========================================================
+   Contato
+   ========================================================== */
+.contato {
+    padding-bottom: 112px;
+}
+
+.lista-contatos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.card-contato {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--texto);
+    text-decoration: none;
+    background-color: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 20px 22px;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.card-contato:hover {
+    color: var(--texto);
+    border-color: var(--destaque);
+    transform: translateY(-4px);
+    box-shadow: var(--sombra);
+}
+
+.card-contato-icone {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    color: var(--destaque);
+    background-color: var(--rosa-suave);
+    border: 1px solid var(--rosa-borda);
+    border-radius: 12px;
+}
+
+.card-contato-texto {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.card-contato-titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.card-contato-valor {
+    color: var(--texto-suave);
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 576px) {
+    /* Espaço extra para o botão "voltar ao topo" não cobrir o texto do rodapé */
+    footer {
+        padding-bottom: 88px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .lista-contatos {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .contato {
+        padding-bottom: 80px;
+    }
+}
